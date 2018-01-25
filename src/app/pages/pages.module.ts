@@ -16,6 +16,7 @@ import { ProgressComponent } from './progress/progress.component';
 
 // Temporal
 import { IncrementComponent } from '../custom-components/increment/increment.component';
+import { ChartDonaComponent } from '../custom-components/chart-dona/chart-dona.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { IncrementComponent } from '../custom-components/increment/increment.com
     DashboardComponent,
     Graficas1Component,
     ProgressComponent,
-    IncrementComponent
+    IncrementComponent,
+    ChartDonaComponent
   ],
   exports: [
     DashboardComponent,
