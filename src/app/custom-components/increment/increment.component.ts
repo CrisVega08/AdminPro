@@ -15,6 +15,7 @@ export class IncrementComponent implements OnInit {
   @Output() porcentageChange: EventEmitter<number> = new EventEmitter;
 
   @ViewChild('txtPorcentage') txtPorcentage: ElementRef;
+
   constructor() {
    }
 
