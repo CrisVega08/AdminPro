@@ -18,6 +18,8 @@ import { AccountSettingsComponent } from './account-settings/account-settings.co
 // Temporal
 import { IncrementComponent } from '../custom-components/increment/increment.component';
 import { ChartDonaComponent } from '../custom-components/chart-dona/chart-dona.component';
+import { PromesisComponent } from './promesis/promesis.component';
+import { RxjsComponent } from './rxjs/rxjs.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { ChartDonaComponent } from '../custom-components/chart-dona/chart-dona.c
     ProgressComponent,
     IncrementComponent,
     ChartDonaComponent,
-    AccountSettingsComponent
+    AccountSettingsComponent,
+    PromesisComponent,
+    RxjsComponent
   ],
   exports: [
     DashboardComponent,
