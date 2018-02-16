@@ -49,7 +49,7 @@ export class RegisterComponent implements OnInit {
     }
 
     if (!this.form.value.conditions) {
-      //swal("Important!", "You have to accept conditions!", "warning");
+      swal("Important!", "You have to accept conditions!", "warning");
       return;
     }
 

@@ -49,8 +49,9 @@ export class LoginComponent implements OnInit {
       let profile = googleUser.getBasicProfile();
       let token = googleUser.getAuthResponse().id_token;
       this._userSer.loginWithGoogle(token)
-      .subscribe( () => { 
-        this._router.navigate(['/dashboard']);
+      .subscribe( () => {
+        // this._router.navigate(['/dashboard']);
+        window.location.href = '#/dashboard';
       } );
     });
   }
