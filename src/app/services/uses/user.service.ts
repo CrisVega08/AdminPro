@@ -1,18 +1,23 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 import { User } from '../../models/user.model';
 import { URL_SERVICES } from '../../config/config';
 
 import 'rxjs/add/operator/map';
+
 @Injectable()
 export class UserService {
   url = URL_SERVICES;
   user: User;
   token: string;
 
-  constructor( public _http: HttpClient) {
-    console.log("Se inicio");
+  constructor(
+    public _http: HttpClient,
+    public _router: Router
+  ) {
+    console.log('Se inicio');
     this.loadStoge();
   }
 
@@ -51,6 +56,16 @@ export class UserService {
         return true;
       });
   }
+  // ==================================================
+logout() {
+  this.user = null;
+  this.token = null;
+
+  localStorage.removeItem('token');
+  localStorage.removeItem('user');
+
+  this._router.navigate(['/login']);
+}
 
   // ===================================================
   loginWithGoogle(token: string) {
