@@ -173,20 +173,20 @@
           <div class="dropdown-menu dropdown-menu-right animated fadeIn">
             <ul class="dropdown-user">
               <li>
-                <div class="dw-user-box">
+                <div class="dw-user-box" align="center">
                   <div class="u-img">
                     <img [src]="_userSer.user.img | images" alt="user">
                   </div>
                   <div class="u-text">
                     <h4> {{ _userSer.user.nombre }} </h4>
                     <p class="text-muted">{{ _userSer.user.email }}</p>
-                    <a href="pages-profile.html" class="btn btn-rounded btn-danger btn-sm">View Profile</a>
+                    <a routerLink="/profile" class="btn btn-rounded btn-danger btn-sm">View Profile</a>
                   </div>
                 </div>
               </li>
               <li role="separator" class="divider"></li>
               <li>
-                <a href="#">
+                <a routerLink="/profile">
                   <i class="ti-user"></i> My Profile</a>
               </li>
               <li>
@@ -199,7 +199,7 @@
               </li>
               <li role="separator" class="divider"></li>
               <li>
-                <a href="#">
+                <a routerLink="/account-setting">
                   <i class="ti-settings"></i> Account Setting</a>
               </li>
               <li role="separator" class="divider"></li>

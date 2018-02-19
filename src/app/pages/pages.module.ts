@@ -21,6 +21,7 @@ import { IncrementComponent } from '../custom-components/increment/increment.com
 import { ChartDonaComponent } from '../custom-components/chart-dona/chart-dona.component';
 import { PromesisComponent } from './promesis/promesis.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { RxjsComponent } from './rxjs/rxjs.component';
     ChartDonaComponent,
     AccountSettingsComponent,
     PromesisComponent,
-    RxjsComponent
+    RxjsComponent,
+    ProfileComponent
   ],
   exports: [
     DashboardComponent,

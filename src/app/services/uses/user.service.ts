@@ -25,9 +25,16 @@ export class UserService {
   createUser( user: User) {
     return this._http.post(this.url + '/usuario', user)
       .map( (res: any) => {
-        swal('User created', user.email, 'success');
         return res.user;
       });
+  }
+
+  updateUser( user: User) {
+    let headers = new HttpHeaders({ 'Authorization': this.token });
+    let options = ({ headers: headers });
+    console.log(this.token, 'token');
+    console.log(this.user, 'user');
+    return this._http.put(this.url + '/usuario/' + this.user._id, user, options);
   }
 
 
@@ -36,7 +43,6 @@ export class UserService {
     localStorage.setItem('id', id );
     localStorage.setItem('token', token);
     localStorage.setItem('user', JSON.stringify(user));
-
     this.user = user;
     this.token = token;
   }

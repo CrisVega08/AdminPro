@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormGroup, FormControl, Validators} from '@angular/forms';
 
-import * as swal from 'sweetalert';
+import * as swal from 'sweetalert2';
 import { UserService } from '../services/service.index';
 import { User } from '../models/user.model';
 
@@ -49,7 +49,11 @@ export class RegisterComponent implements OnInit {
     }
 
     if (!this.form.value.conditions) {
-      swal("Important!", "You have to accept conditions!", "warning");
+      swal(
+        'Important!',
+        'You have to accept conditions!',
+        'warning'
+      );
       return;
     }
 
@@ -60,6 +64,11 @@ export class RegisterComponent implements OnInit {
     );
 
     this._userSer.createUser(user).subscribe( res => {
+      swal(
+        'User created',
+        user.email,
+        'success'
+      );
       this._router.navigate(['/login']);
     });
   }
