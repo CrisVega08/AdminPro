@@ -19,7 +19,9 @@ export class ProfileComponent implements OnInit {
 
   save(user: any) {
     this.user.name = user.nombre;
-    this.user.password = user.password;
+    if ( !this.user.google ) {
+      this.user.password = user.password;
+    }
     this.user.email = user.email;
 
     this._userSer.updateUser(user)

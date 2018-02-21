@@ -32,9 +32,14 @@ export class UserService {
   updateUser( user: User) {
     let headers = new HttpHeaders({ 'Authorization': this.token });
     let options = ({ headers: headers });
-    console.log(this.token, 'token');
-    console.log(this.user, 'user');
-    return this._http.put(this.url + '/usuario/' + this.user._id, user, options);
+    return this._http.put(this.url + '/usuario/' + this.user._id, user, options)
+                .map( (res: any) => {
+                  this.saveStorage(res.usuario._id, this.token, res.usuario);
+                  // this.user = res.usuario;
+                  // swal('User updated', user.name, 'succes');
+
+                  return true;
+                });
   }
 
 
