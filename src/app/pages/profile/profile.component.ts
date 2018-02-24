@@ -10,8 +10,12 @@ import { User } from '../../models/user.model';
 export class ProfileComponent implements OnInit {
 
   user: User;
+  uploadFile: File;
+  ImageTemp: File;
+
   constructor(public _userSer: UserService) {
     this.user = _userSer.user;
+    console.log(this.user);
   }
 
   ngOnInit() {
@@ -29,5 +33,19 @@ export class ProfileComponent implements OnInit {
 
           console.log(res);
         });
+  }
+
+  selecImage( file: File ) {
+
+    if ( !file ) {
+      this.uploadFile = null;
+      return;
+    }
+
+    this.uploadFile = file;
+  }
+
+  changeImage() {
+    this._userSer.changeImage(this.uploadFile, this.user._id);
   }
 }

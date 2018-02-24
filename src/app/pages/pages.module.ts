@@ -6,6 +6,7 @@ import { ChartsModule } from 'ng2-charts';
 // Modulos
 import { SharedModule } from '../shared/shared.module';
 import { PipesModule } from '../pipes/pipes.module';
+import { CommonModule } from '@angular/common';
 
 // Rutas
 import { PAGES_ROUTES } from './pages.routes';
@@ -42,6 +43,7 @@ import { ProfileComponent } from './profile/profile.component';
     ProgressComponent
   ],
   imports: [
+    CommonModule,
     SharedModule,
     PAGES_ROUTES,
     FormsModule,

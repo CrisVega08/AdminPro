@@ -4,8 +4,10 @@ import { Router } from '@angular/router';
 
 import { User } from '../../models/user.model';
 import { URL_SERVICES } from '../../config/config';
+import { UploadFileService } from '../uploadfile/upload-file.service';
 
 import 'rxjs/add/operator/map';
+import * as swal from 'sweetalert2';
 
 @Injectable()
 export class UserService {
@@ -15,7 +17,8 @@ export class UserService {
 
   constructor(
     public _http: HttpClient,
-    public _router: Router
+    public _router: Router,
+    public _uplFilSer: UploadFileService
   ) {
     console.log('Se inicio');
     this.loadStoge();
@@ -106,5 +109,18 @@ logout() {
       this.token = null;
     }
 
+  }
+
+  changeImage( file: File, id: string ) {
+    this._uplFilSer.uploadFile(file, 'usuarios', id)
+    .then( (res: any) => {
+      this.user.img = res.usuario.img;
+      // swal('Profile image uploaded', this.user.name, 'success');
+      this.saveStorage(id, this.token, this.user);
+      console.log( res );
+    })
+    .catch( e => {
+      console.log( e );
+    });
   }
 }

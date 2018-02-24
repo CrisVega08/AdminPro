@@ -6,10 +6,10 @@ import { URL_SERVICES } from '../config/config';
 })
 export class ImagesPipe implements PipeTransform {
 
-  transform(image: string, type: string = 'user'): any {
+  transform(image: string, type: string = 'usuario'): any {
 
     let url = URL_SERVICES + '/img';
-
+  console.log(image, 'imagen en pipe');
     if ( !image ) {
       return url + '/usuario/xxx';
     }
