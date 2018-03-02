@@ -95,16 +95,17 @@ logout() {
   // ===================================================
 
   isLogin() {
+    // console.log(this.token, 'información');
     return (this.token.length > 5) ? true : false;
   }
 
   loadStoge() {
     if ( localStorage.getItem('token')) {
       this.token = localStorage.getItem('token');
-      this.token = JSON.parse(localStorage.getItem('user'));
-      console.log("entro");
+      this.user = JSON.parse(localStorage.getItem('user'));
+      // console.log("entro ent tiene token");
     } else {
-      console.log("token vacio");
+      // console.log("token vacio");
       this.token = '';
       this.token = null;
     }

@@ -42,7 +42,17 @@ export class ProfileComponent implements OnInit {
       return;
     }
 
+    if (file.type.indexOf('image') < 0){
+      // swal('Only images', 'This file do not are a file','error' );
+      this.uploadFile = null;
+      return;
+    }
+
     this.uploadFile = file;
+
+    let reader = new FileReader();
+    let urlImageTemp = reader.readAsDataURL(file);
+    reader.onloadend = () => this.ImageTemp = reader.result;
   }
 
   changeImage() {
