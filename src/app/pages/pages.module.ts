@@ -23,7 +23,7 @@ import { ChartDonaComponent } from '../custom-components/chart-dona/chart-dona.c
 import { PromesisComponent } from './promesis/promesis.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
 import { ProfileComponent } from './profile/profile.component';
-
+import { WebBluetoothModule } from '@manekinekko/angular-web-bluetooth';
 @NgModule({
   declarations: [
     PagesComponent,
@@ -48,7 +48,10 @@ import { ProfileComponent } from './profile/profile.component';
     PAGES_ROUTES,
     FormsModule,
     ChartsModule,
-    PipesModule
+    PipesModule,
+    WebBluetoothModule.forRoot({
+      enableTracing: true
+    })
   ]
 })
 export class PagesModule { }

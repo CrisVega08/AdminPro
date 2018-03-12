@@ -35,14 +35,14 @@ export class ProfileComponent implements OnInit {
         });
   }
 
-  selecImage( file: File ) {
+  selecImage(file: File ) {
 
     if ( !file ) {
       this.uploadFile = null;
       return;
     }
 
-    if (file.type.indexOf('image') < 0){
+    if (file.type.indexOf('image') < 0) {
       // swal('Only images', 'This file do not are a file','error' );
       this.uploadFile = null;
       return;
