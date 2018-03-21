@@ -9,7 +9,6 @@ export class ImagesPipe implements PipeTransform {
   transform(image: string, type: string = 'usuario'): any {
 
     let url = URL_SERVICES + '/img';
-    console.log(image, 'imagen en pipe');
     if ( !image ) {
       return url + '/usuario/xxx';
     }
@@ -30,7 +29,6 @@ export class ImagesPipe implements PipeTransform {
       break;
 
       default:
-        console.log('no existe imagen');
         url += '/usuario/xxx';
     }
 
