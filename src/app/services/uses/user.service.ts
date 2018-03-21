@@ -7,7 +7,7 @@ import { URL_SERVICES } from '../../config/config';
 import { UploadFileService } from '../uploadfile/upload-file.service';
 
 import 'rxjs/add/operator/map';
-import * as swal from 'sweetalert2';
+import swal from 'sweetalert2';
 
 @Injectable()
 export class UserService {
@@ -39,7 +39,7 @@ export class UserService {
                 .map( (res: any) => {
                   this.saveStorage(res.usuario._id, this.token, res.usuario);
                   // this.user = res.usuario;
-                  // swal('User updated', user.name, 'succes');
+                  swal('User updated', user.name, 'success');
 
                   return true;
                 });
@@ -116,12 +116,16 @@ logout() {
     this._uplFilSer.uploadFile(file, 'usuarios', id)
     .then( (res: any) => {
       this.user.img = res.usuario.img;
-      // swal('Profile image uploaded', this.user.name, 'success');
+      swal('Profile image uploaded', this.user.name, 'success');
       this.saveStorage(id, this.token, this.user);
       console.log( res );
     })
     .catch( e => {
       console.log( e );
     });
+  }
+
+  loadingUser(until: number = 0) {
+   return this._http.get(this.url + '/usuario?desde=' + until);
   }
 }

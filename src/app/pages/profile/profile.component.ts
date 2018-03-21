@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../services/service.index';
 import { User } from '../../models/user.model';
 
+import swal from 'sweetalert2';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
@@ -43,7 +44,7 @@ export class ProfileComponent implements OnInit {
     }
 
     if (file.type.indexOf('image') < 0) {
-      // swal('Only images', 'This file do not are a file','error' );
+      swal('Only images', 'This file do not are a file','error' );
       this.uploadFile = null;
       return;
     }

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+
 declare function initPlugin();
+
 @Component({
   selector: 'app-pages',
   templateUrl: './pages.component.html',
