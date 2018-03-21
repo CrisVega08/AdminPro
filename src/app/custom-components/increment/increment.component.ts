@@ -36,7 +36,6 @@ export class IncrementComponent implements OnInit {
   onChanges( newValue: number) {
 
     // let elemHTML = document.getElementsByName('porcentage')[0];
-    //console.log(elemHTML.value);
     if ( newValue > 100 ) {
       newValue = 100;
     } else if (newValue <= 0) {

@@ -20,7 +20,6 @@ export class UserService {
     public _router: Router,
     public _uplFilSer: UploadFileService
   ) {
-    console.log('Se inicio');
     this.loadStoge();
   }
 
@@ -96,7 +95,6 @@ logout() {
   // ===================================================
 
   isLogin() {
-    // console.log(this.token, 'información');
     return (this.token.length > 5) ? true : false;
   }
 
@@ -104,9 +102,7 @@ logout() {
     if ( localStorage.getItem('token')) {
       this.token = localStorage.getItem('token');
       this.user = JSON.parse(localStorage.getItem('user'));
-      // console.log("entro ent tiene token");
     } else {
-      // console.log("token vacio");
       this.token = '';
       this.token = null;
     }

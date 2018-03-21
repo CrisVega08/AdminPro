@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { User } from '../../models/user.model';
 import { UserService } from '../../services/uses/user.service';
 import swal from 'sweetalert2';
+import { UploadModalService } from '../../custom-components/upload-modal/upload-modal.service';
 
 @Component({
   selector: 'app-usuarios',
@@ -16,11 +17,14 @@ export class UsuariosComponent implements OnInit {
   loading: boolean = true;
 
   constructor(
-    public _userSer: UserService
+    public _userSer: UserService,
+    public _molUpl: UploadModalService
   ) { }
 
   ngOnInit() {
     this.cargarUsuarios();
+    this._molUpl.notification
+        .subscribe(res => this.cargarUsuarios());
   }
 
   cargarUsuarios() {
@@ -35,7 +39,6 @@ export class UsuariosComponent implements OnInit {
 
   changeUntil(num: number) {
     let until = this.desde + num;
-    console.log(until);
     if ( until >= this.totalRegister ) {
       return;
     }
@@ -68,7 +71,7 @@ export class UsuariosComponent implements OnInit {
   }
 
 
-  deleteUser( usuario: User ) {
+  deleteUser( usuario: any ) {
     if ( usuario._id === this._userSer.user._id) {
       swal('No se puede borrar', 'No se puede borrar su propia cuenta', 'error');
       return;
@@ -92,5 +95,8 @@ export class UsuariosComponent implements OnInit {
                     });
       }
     });
+  }
+  showMdl( id ) {
+    this._molUpl.showModal('usuarios', id);
   }
 }

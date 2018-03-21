@@ -14,10 +14,8 @@ export class UploadFileService {
       xhr.onreadystatechange = () => {
         if (xhr.readyState === 4) {
           if ( xhr.status === 200 ) {
-            console.log('Imagen subida');
             resolve( JSON.parse( xhr.response));
           } else {
-            console.log( 'problem with upload image ');
             reject (xhr.response);
           }
         }

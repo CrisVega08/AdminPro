@@ -54,7 +54,7 @@
         <h4 class="card-title">User's photograph</h4>
         <h6 class="card-subtitle">User Name</h6>
         <img *ngIf="!ImageTemp" [src]="user.img | images" class="w150">
-        <img *ngIf="ImageTemp" [src]="ImageTemp | images" class="w150">
+        <img *ngIf="ImageTemp" [src]="ImageTemp" class="w150">
         <input (change)="selecImage( $event.target.files[0] )" type="file">
         <br><br>
         <button type="button" (click)="changeImage()" [disabled]="!uploadFile" class="btn btn-success waves-effect waves-light m-r-10">

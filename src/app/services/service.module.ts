@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
+import { UploadModalService } from '../custom-components/upload-modal/upload-modal.service';
 
 import {
   SettingsService,
@@ -22,7 +23,8 @@ import {
     SidebarService,
     UserService,
     LoginGuardGuard,
-    UploadFileService
+    UploadFileService,
+    UploadModalService
   ],
   declarations: []
 })
