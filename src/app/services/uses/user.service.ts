@@ -35,12 +35,13 @@ export class UserService {
   updateUser( user: User) {
     let headers = new HttpHeaders({ 'Authorization': this.token });
     let options = ({ headers: headers });
-    return this._http.put(this.url + '/usuario/' + this.user._id, user, options)
+    return this._http.put(this.url + '/usuario/' + user._id, user, options)
                 .map( (res: any) => {
-                  this.saveStorage(res.usuario._id, this.token, res.usuario);
-                  // this.user = res.usuario;
-                  swal('User updated', user.name, 'success');
 
+                  if ( user._id === this.user._id) {
+                    this.saveStorage(res.usuario._id, this.token, res.usuario);
+                  }
+                  swal('User updated', user.name, 'success');
                   return true;
                 });
   }
@@ -127,5 +128,24 @@ logout() {
 
   loadingUser(until: number = 0) {
    return this._http.get(this.url + '/usuario?desde=' + until);
+  }
+
+  searchUser(term: string) {
+    return this._http.get(this.url + '/busqueda/coleccion/usuarios/' + term)
+                .map( (resp: any) => resp.usuarios);
+  }
+
+  deleteUser(id: string) {
+    let headers = new HttpHeaders({ 'Authorization': this.token });
+    let options = ({ headers: headers });
+    return this._http.delete(this.url + '/usuario/' + id, options)
+                .map( (res: any) => {
+                  swal(
+                    'Eliminado!',
+                    `usuario.nombre ha sido eliminado`,
+                    'success'
+                  );
+                  return true;
+                });
   }
 }

@@ -16,6 +16,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { Graficas1Component } from './graficas1/graficas1.component';
 import { ProgressComponent } from './progress/progress.component';
 import { AccountSettingsComponent } from './account-settings/account-settings.component';
+import { UploadModalComponent } from '../custom-components/upload-modal/upload-modal.component';
 
 // Temporal
 import { IncrementComponent } from '../custom-components/increment/increment.component';
@@ -24,6 +25,7 @@ import { PromesisComponent } from './promesis/promesis.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
 import { ProfileComponent } from './profile/profile.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
+
 @NgModule({
   declarations: [
     PagesComponent,
@@ -36,7 +38,8 @@ import { UsuariosComponent } from './usuarios/usuarios.component';
     PromesisComponent,
     RxjsComponent,
     ProfileComponent,
-    UsuariosComponent
+    UsuariosComponent,
+    UploadModalComponent
   ],
   exports: [
     DashboardComponent,
