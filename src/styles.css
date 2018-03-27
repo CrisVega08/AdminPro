@@ -25,6 +25,21 @@
   display: none;
 }
 
+.tablefl {
+  display: flex;
+  width: 150px;
+}
+
+.tablest {
+  min-height: 10px;
+  height: 35px;
+  font-size: 0.8rem;
+}
+
+.btnmr {
+  margin: .1rem;
+}
+
 .black-background {
   background-color: rgba(0, 0, 0, 0.4);
   position: fixed;

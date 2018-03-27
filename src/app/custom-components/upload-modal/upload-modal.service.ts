@@ -10,7 +10,6 @@ export class UploadModalService {
   public notification = new EventEmitter<any>();
 
   constructor() {
-    console.log('Servicio');
   }
 
   hiddenModal() {
@@ -20,6 +19,7 @@ export class UploadModalService {
   }
 
   showModal(type: string, id: string) {
+    console.log(id)
     this.type = type;
     this.id = id;
     this.hidden = '';

@@ -25,6 +25,9 @@ import { PromesisComponent } from './promesis/promesis.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
 import { ProfileComponent } from './profile/profile.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
+import { HospitalesComponent } from './hospitales/hospitales.component';
+import { MedicosComponent } from './medicos/medicos.component';
+import { MedicoComponent } from './medicos/medico/medico.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +42,10 @@ import { UsuariosComponent } from './usuarios/usuarios.component';
     RxjsComponent,
     ProfileComponent,
     UsuariosComponent,
-    UploadModalComponent
+    UploadModalComponent,
+    HospitalesComponent,
+    MedicosComponent,
+    MedicoComponent
   ],
   exports: [
     DashboardComponent,

@@ -1,0 +1,65 @@
+<div class="row animated fadeIn">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-body">
+        <input #input (keyup)=" search(input.value)" type="text" class="form-control" placeholder="Buscar Médicos...">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row animated fadeIn" *ngIf="!loading">
+  <div class="col-sm-12">
+
+    <div class="alert text-center">
+      <strong>Cargando</strong>
+      <br>
+      <i class="fa fa-refresh fa-spin fa-2x"></i>
+      <br>
+      <span>Espere por favor</span>
+    </div>
+  </div>
+</div>
+
+<div class="row animated fadeIn">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-body">
+        <div class="text-right">
+          <button [routerLink]="[ '/medico', 'nuevo'] " class="btn waves-effect waves-light btn-rounded btn-info " [ngStyle]="{ 'display': 'inline'} "><i class="fa fa-plus-circle "></i> Crear Médico</button>
+        </div>
+        <h3 class="card-title "> Médicos Registrados (<small> {{totalMedicos}} </small>)</h3>
+        <table class="table table-hover ">
+          <thead>
+            <tr>
+              <th>Imagen</th>
+              <th>Medico</th>
+              <th>Hospital</th>
+              <th>Acciones</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let medico of Medicos ">
+              <td class="w70 ">
+                <img (click)="showMdl( medico._id ) " [src]="medico.img | images: 'hospital' " class="img-50 img-square pointer ">
+              </td>
+              <td [ngStyle]="{ 'width': '450px'} ">{{medico.nombre}}
+              </td>
+              <td [ngStyle]="{ 'width': '450px'} ">{{medico.hospital.nombre}}
+              </td>
+              <td class="tablefl">
+                <button [routerLink]="[ '/medico',medico._id] " class="btn btn-primary ">
+                                <i class="fa fa-save "></i>
+                                </button>
+                <button (click)="eliminar(medico) " class="btn btn-danger ">
+                                <i class="fa fa-trash-o "></i>
+                                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

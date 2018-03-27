@@ -16,7 +16,6 @@ export class ProfileComponent implements OnInit {
 
   constructor(public _userSer: UserService) {
     this.user = _userSer.user;
-    console.log(this.user);
   }
 
   ngOnInit() {
@@ -32,7 +31,6 @@ export class ProfileComponent implements OnInit {
     this._userSer.updateUser(user)
         .subscribe( res => {
 
-          console.log(res);
         });
   }
 

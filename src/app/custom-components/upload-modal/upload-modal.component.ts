@@ -40,7 +40,6 @@ export class UploadModalComponent implements OnInit {
     let reader = new FileReader();
     let urlImageTemp = reader.readAsDataURL(file);
     reader.onloadend = () => {
-      console.log(reader.result);
       this.ImageTemp = reader.result;
     };
 
