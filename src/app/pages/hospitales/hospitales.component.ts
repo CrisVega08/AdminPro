@@ -93,7 +93,7 @@ export class HospitalesComponent implements OnInit {
   }
 
   actualizar(hospital: Hospital) {
-    this._genSer.actualizar(hospital._id, hospital.nombre, 'hospital', this._usrSer.token)
+    this._genSer.actualizar(hospital._id, hospital, 'hospital', this._usrSer.token)
                 .subscribe(( res: any ) => {
                   if (res) {
                     swal({

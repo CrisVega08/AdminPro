@@ -92,7 +92,7 @@ export class MedicosComponent implements OnInit {
   }
 
   actualizar(medico: Medico) {
-    this._genSer.actualizar(medico._id, medico.nombre, 'medico', this._usrSer.token)
+    this._genSer.actualizar(medico._id, medico, 'medico', this._usrSer.token)
                 .subscribe(( res: any ) => {
                   if (res) {
                     swal({

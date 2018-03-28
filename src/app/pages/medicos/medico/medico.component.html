@@ -1,8 +1,8 @@
-<div class="row">
+<div class="row animated fadeIn">
   <div class="col-lg-6">
     <div class="card">
       <div class="card-body">
-        <h4 class="card-title">Médico : Nombre</h4>
+        <h4 class="card-title">Médico : {{medico.nombre}}</h4>
         <form #f="ngForm" class="form p-t-20" ngNativeValidate (ngSubmit)="guardarmedico(f)">
           <div class="form-group">
             <label>Nombre médico</label>
@@ -15,9 +15,9 @@
             <label>Hospital</label>
             <div class="input-group">
               <div class="input-group-addon"><i class="ti-email"></i></div>
-              <select [(ngModel)]="medico.hospital" name="hospital" class="form-control" required>
+              <select (change)="cambioHospital( $event.target.value )" [(ngModel)]="medico.hospital" name="hospital" class="form-control" required>
                 <option value="">Seleccione Hospital</option>
-                <option *ngFor="let hospital of hospitales" [value]="hospital._id" >{{hospital.nombre}}</option>
+                <option *ngFor="let hosp of hospitales" [value]="hosp._id" >{{hosp.nombre}}</option>
               </select>
             </div>
           </div>
@@ -33,13 +33,13 @@
   <div class="col-md-3">
     <div class="card card-body">
       <h4 class="card-title">Hospital</h4>
-      <img src="" alt="">
+      <img [src]="hospital.img | images:'hospital'" class="rounded img-fluid">
     </div>
   </div>
-  <div class="col-md-3">
+  <div class="col-md-3" *ngIf="medico._id">
     <div class="card card-body">
       <h4 class="card-title">Fotografía</h4>
-      <img src="" alt="">
+      <img [src]="medico.img | images:'medico'" class="rounded img-fluid pointer" (click)="cambiarImagen()">
     </div>
   </div>
 </div>

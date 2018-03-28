@@ -31,7 +31,7 @@ export class HospitalesService {
     return this._http.delete(`${this.url}/${extension}/${id}`, options );
   }
 
-  crear(nombre: string, extension: string, token: string) {
+  crear(nombre: object, extension: string, token: string) {
     let headers = new HttpHeaders({ 'Authorization': token });
     let options = ({ headers: headers });
     return this._http.post(`${this.url}/${extension}`,  nombre , options );
@@ -44,15 +44,14 @@ export class HospitalesService {
                 });
   }
 
-  actualizar( id: string, nombre: string, extension: string, token: string) {
-    console.log(nombre)
+  actualizar( id: string, nombre: object, extension: string, token: string) {
     let headers = new HttpHeaders({ 'Authorization': token });
     let options = ({ headers: headers });
-    return this._http.put(`${this.url}/${extension}/${id}`, {nombre}, options);
+    return this._http.put(`${this.url}/${extension}/${id}`, nombre, options);
   }
 
   searchUser(term: string) {
-    
+  
   }
 
 }
