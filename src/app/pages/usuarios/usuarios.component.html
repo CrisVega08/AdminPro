@@ -30,11 +30,12 @@
       <table class="table table-hover tablest">
         <thead>
           <tr>
-            <th>Imagen</th>
-            <th>email</th>
-            <th>Nombre</th>
-            <th>Role</th>
-            <th>Auth</th>
+            <th class="centrado">Imagen</th>
+            <th class="centrado">email</th>
+            <th class="centrado">Nombre</th>
+            <th class="centrado">Role</th>
+            <th class="centrado">Auth</th>
+            <th class="centrado">Acciones</th>
             <th></th>
           </tr>
         </thead>
@@ -56,10 +57,10 @@
               <label *ngIf="!usuario.google" class="label label-info">Normal</label>
             </td>
             <td class="tablefl">
-              <button (click)="saveRole( usuario )" class="btn btn-primary btnmr">
+              <button (click)="saveRole( usuario )" class="btn btn-primary btn-sm btnmr">
                                 <i class="fa fa-save"></i>
                                 </button>
-              <button (click)="deleteUser( usuario )" class="btn btn-danger btnmr">
+              <button (click)="deleteUser( usuario )" class="btn btn-danger btn-sm btnmr">
                                 <i class="fa fa-trash-o"></i>
                                 </button>
             </td>

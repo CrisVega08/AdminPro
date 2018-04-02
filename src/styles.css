@@ -27,6 +27,8 @@
 
 .tablefl {
   display: flex;
+  justify-content: center;
+  align-items: center;
   width: 150px;
 }
 
@@ -34,6 +36,11 @@
   min-height: 10px;
   height: 35px;
   font-size: 0.8rem;
+  /* text-align: center; */
+}
+
+.centrado {
+  text-align: center;
 }
 
 .btnmr {
