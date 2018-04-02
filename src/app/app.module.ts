@@ -14,7 +14,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 // Services
 import { ServiceModule } from './services/service.module';
-import { TablaComponent } from './custom-components/tabla/tabla.component';
 
 
 @NgModule({
@@ -22,8 +21,7 @@ import { TablaComponent } from './custom-components/tabla/tabla.component';
     AppComponent,
     LoginComponent,
     NopagefoundComponent,
-    RegisterComponent,
-    TablaComponent
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

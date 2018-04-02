@@ -24,6 +24,14 @@
 <div class="row animated fadeIn">
   <div class="col-12">
     <div class="card">
+      <app-tabla [rows]="usuarios" [cols]="colums" [propertiesRow]="properties" [titleTable]="title" [total]="totalRegister" [until]="usuarios.length"></app-tabla>
+    </div>
+  </div>
+</div>
+
+<!-- <div class="row animated fadeIn">
+  <div class="col-12">
+    <div class="card">
       <div class="card-body">
         <h3 class="card-title"> Usuarios registrados (<small> {{totalRegister}} </small>)</h3>
       </div>
@@ -71,4 +79,4 @@
       <button (click)="changeUntil(5)" class="btn btn-secundary">Siguiente</button>
     </div>
   </div>
-</div>
+</div> -->

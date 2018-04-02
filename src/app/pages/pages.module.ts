@@ -15,6 +15,7 @@ import { PagesComponent } from './pages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { Graficas1Component } from './graficas1/graficas1.component';
 import { ProgressComponent } from './progress/progress.component';
+import { TablaComponent } from '../custom-components/tabla/tabla.component';
 import { AccountSettingsComponent } from './account-settings/account-settings.component';
 import { UploadModalComponent } from '../custom-components/upload-modal/upload-modal.component';
 
@@ -35,6 +36,7 @@ import { MedicoComponent } from './medicos/medico/medico.component';
     DashboardComponent,
     Graficas1Component,
     ProgressComponent,
+    TablaComponent,
     IncrementComponent,
     ChartDonaComponent,
     AccountSettingsComponent,

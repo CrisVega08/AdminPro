@@ -10,7 +10,21 @@ import { UploadModalService } from '../../custom-components/upload-modal/upload-
   styles: []
 })
 export class UsuariosComponent implements OnInit {
-
+  colums: any[] = [
+    'Imagen',
+    'email',
+    'Nombre',
+    'Role',
+    'Auth'
+  ];
+  properties: any[] = [
+    'img',
+    'email',
+    'nombre',
+    'role',
+    'auth'
+  ];
+  title: string = 'Usuarios Registrados';
   usuarios: User[] = [];
   desde: number = 0;
   totalRegister: number = 0;
