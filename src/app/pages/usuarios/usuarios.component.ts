@@ -10,21 +10,40 @@ import { UploadModalService } from '../../custom-components/upload-modal/upload-
   styles: []
 })
 export class UsuariosComponent implements OnInit {
-  colums: any[] = [
-    'Imagen',
-    'email',
-    'Nombre',
-    'Role',
-    'Auth'
-  ];
-  properties: any[] = [
-    'img',
-    'email',
-    'nombre',
-    'role',
-    'auth'
-  ];
-  title: string = 'Usuarios Registrados';
+  
+  tableProperties: any = {
+    title: 'Usuarios Registrados',
+    columns: [
+      {
+        titleColumn : 'Imagen',
+        property: 'img',
+        length: '70px'
+      },
+      {
+        titleColumn : 'email',
+        property: 'email',
+        length: '150px'
+      },
+      {
+        titleColumn : 'Nombre',
+        property: 'nombre',
+        length: '120px'
+      },
+      {
+        titleColumn : 'Role',
+        property: 'role',
+        length: '80px'
+      },
+      {
+        titleColumn : 'Tipo Autenticación',
+        property: 'auth',
+        length: '80px'
+      }
+    ],
+    totalRegisters : 0,
+    actions: false
+  }
+
   usuarios: User[] = [];
   desde: number = 0;
   totalRegister: number = 0;
