@@ -43,8 +43,8 @@ export class UsuariosComponent implements OnInit {
     totalRegisters : 0,
     actions: false
   }
-
-  usuarios: User[] = [];
+  
+  // usuarios: User[] = [];
   desde: number = 0;
   totalRegister: number = 0;
   loading: boolean = true;
